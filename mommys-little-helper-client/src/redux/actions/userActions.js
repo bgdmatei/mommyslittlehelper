@@ -3,7 +3,8 @@ import {
   SET_ERRORS,
   CLEAR_ERRORS,
   LOADING_UI,
-  SET_UNAUTHENTICATED
+  SET_UNAUTHENTICATED,
+  LOADING_USER
 } from "../types";
 import axios from "axios";
 
@@ -18,6 +19,7 @@ export const loginUser = (userData, history) => dispatch => {
       history.push("/");
     })
     .catch(err => {
+      console.log(err);
       dispatch({
         type: SET_ERRORS,
         payload: err.response.data
@@ -50,6 +52,7 @@ export const logoutUser = () => dispatch => {
 };
 
 export const getUserData = () => dispatch => {
+  dispatch({ type: LOADING_USER });
   axios
     .get("/user")
     .then(res => {
@@ -64,5 +67,5 @@ export const getUserData = () => dispatch => {
 const setAuthorizationHeader = token => {
   const FBIdToken = `Bearer ${token}`;
   localStorage.setItem("FBIdToken", FBIdToken);
-  axios.default.headers.common["Authorization"] = FBIdToken;
+  axios.defaults.headers.common["Authorization"] = FBIdToken;
 };
