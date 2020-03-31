@@ -37,7 +37,7 @@ const styles = {
 };
 
 class Scream extends Component {
-  likeScream = () => {
+  likedScream = () => {
     if (
       this.props.user.likes &&
       this.props.user.likes.find(
