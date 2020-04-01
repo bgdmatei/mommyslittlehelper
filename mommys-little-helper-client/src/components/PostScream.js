@@ -70,7 +70,7 @@ class PostScream extends Component {
     } = this.props;
     return (
       <Fragment>
-        <MyButton onClick={this.handleOpen} tip="Post a comment">
+        <MyButton onClick={this.handleOpen} tip="New post">
           <AddIcon />
         </MyButton>
         <Dialog
@@ -86,13 +86,12 @@ class PostScream extends Component {
           >
             <CloseIcon />
           </MyButton>
-          <DialogTitle>Post a new comment </DialogTitle>
+          <DialogTitle>Write a new post </DialogTitle>
           <DialogContent>
             <form onSubmit={this.handleSubmit}>
               <TextField
                 name="body"
                 type="text"
-                label="Comment!"
                 rows="3"
                 placeholder="Write something"
                 error={errors.body ? true : false}
