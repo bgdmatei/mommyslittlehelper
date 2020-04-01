@@ -5,7 +5,7 @@ import MyButton from "../util/MyButton";
 
 //MUI Stuff
 import Button from "@material-ui/core/Button";
-import Dialog from "@material-ui/core/DialogTitle";
+import Dialog from "@material-ui/core/Dialog";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import DialogActions from "@material-ui/core/DialogActions";
 import DeleteOutline from "@material-ui/icons/DeleteOutline";
@@ -57,7 +57,7 @@ class DeleteScream extends Component {
         >
           <DialogTitle>Are you sure you want to delete the post?</DialogTitle>
           <DialogActions>
-            <Button onClick={this.handleClose} color="primary">
+            <Button onClick={this.handleClose} color="secondary">
               Cancel
             </Button>
             <Button onClick={this.deleteScream} color="secondary">
