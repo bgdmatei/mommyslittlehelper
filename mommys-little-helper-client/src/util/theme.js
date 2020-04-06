@@ -41,9 +41,9 @@ export default {
       margin: 4
     },
     visibleSeparator: {
-      width: "90%",
+      width: "100%",
       borderBottom: "1px solid rgba(0,0,0,0.1)",
-      marginBottom: 20
+      marginBottom: 16
     }
   }
 };
