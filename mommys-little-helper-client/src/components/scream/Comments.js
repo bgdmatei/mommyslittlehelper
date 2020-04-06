@@ -51,7 +51,7 @@ class Comments extends Component {
                       >
                         {userHandle}
                       </Typography>
-                      <Typography variant="body2" color="primary">
+                      <Typography variant="body2" color="textSecondary">
                         {dayjs(createdAt).format("h:mma, D MMMM YYYY")}
                       </Typography>
                       <hr className={classes.invisibleSeparator} />
