@@ -9,9 +9,6 @@ import { connect } from "react-redux";
 import { getScreams } from "../redux/actions/dataActions";
 
 class home extends Component {
-  state = {
-    screams: null
-  };
   componentDidMount() {
     this.props.getScreams();
   }

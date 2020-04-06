@@ -47,11 +47,11 @@ class Comments extends Component {
                         variant="h5"
                         component={Link}
                         to={`/users/${userHandle}`}
-                        color="primary"
+                        color="secondary"
                       >
                         {userHandle}
                       </Typography>
-                      <Typography variant="body2" color="secondary">
+                      <Typography variant="body2" color="primary">
                         {dayjs(createdAt).format("h:mma, D MMMM YYYY")}
                       </Typography>
                       <hr className={classes.invisibleSeparator} />
