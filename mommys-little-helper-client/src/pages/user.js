@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import axios from "axios";
 import Scream from "../components/scream/Scream";
 import StaticProfile from "../components/profile/StaticProfile";
+import ScreamSkeleton from "../util/ScreamSkeleton";
 
 //MUI Stuff
 import Grid from "@material-ui/core/Grid";
@@ -37,7 +38,7 @@ class user extends Component {
     const { screamIdParam } = this.state;
 
     const screamsMarkup = loading ? (
-      <p>Loading data...</p>
+      <ScreamSkeleton />
     ) : screams === null ? (
       <p> No posts from this user</p>
     ) : !screamIdParam ? (
