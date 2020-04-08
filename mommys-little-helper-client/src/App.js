@@ -24,6 +24,9 @@ import axios from "axios";
 
 const theme = createMuiTheme(themeFile);
 
+axios.default.baseURL =
+  "https://europe-west1-mommyslittlehelper-f4997.cloudfunctions.net/api";
+
 const token = localStorage.FBIdToken;
 if (token) {
   const decodedToken = jwtDecode(token);
