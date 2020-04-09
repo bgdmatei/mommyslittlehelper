@@ -31,13 +31,13 @@ class Navbar extends Component {
             </Fragment>
           ) : (
             <Fragment>
-              <Button color="inherit" component={Link} to="/">
+              <Button style={{ color: "#fafafa" }} component={Link} to="/">
                 Home
               </Button>
-              <Button color="inherit" component={Link} to="/login">
+              <Button style={{ color: "#fafafa" }} component={Link} to="/login">
                 Login
               </Button>
-              <Button color="inherit" component={Link} to="signup">
+              <Button style={{ color: "#fafafa" }} component={Link} to="signup">
                 Signup
               </Button>
             </Fragment>
@@ -49,11 +49,11 @@ class Navbar extends Component {
 }
 
 Navbar.propTypes = {
-  authenticated: PropTypes.bool.isRequired
+  authenticated: PropTypes.bool.isRequired,
 };
 
-const mapStateToProps = state => ({
-  authenticated: state.user.authenticated
+const mapStateToProps = (state) => ({
+  authenticated: state.user.authenticated,
 });
 
 export default connect(mapStateToProps)(Navbar);

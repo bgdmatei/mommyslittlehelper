@@ -23,9 +23,9 @@ import { markNotificationsRead } from "../../redux/actions/userActions";
 
 class Notifications extends Component {
   state = {
-    anchorEl: null
+    anchorEl: null,
   };
-  handleOpen = event => {
+  handleOpen = (event) => {
     this.setState({ anchorEl: event.target });
   };
   handleClose = () => {
@@ -33,8 +33,8 @@ class Notifications extends Component {
   };
   onMenuOpened = () => {
     let unreadNotificationsIds = this.props.notifications
-      .filter(not => !not.read)
-      .map(not => not.notificationId);
+      .filter((not) => !not.read)
+      .map((not) => not.notificationId);
     this.props.markNotificationsRead(unreadNotificationsIds);
   };
   render() {
@@ -45,11 +45,11 @@ class Notifications extends Component {
 
     let notificationsIcon;
     if (notifications && notifications.length > 0) {
-      notifications.filter(not => not.read === false).length > 0
+      notifications.filter((not) => not.read === false).length > 0
         ? (notificationsIcon = (
             <Badge
               badgeContent={
-                notifications.filter(not => not.read === false).length
+                notifications.filter((not) => not.read === false).length
               }
               color="secondary"
             >
@@ -62,7 +62,7 @@ class Notifications extends Component {
     }
     let notificationsMarkup =
       notifications && notifications.length > 0 ? (
-        notifications.map(not => {
+        notifications.map((not) => {
           const verb = not.type === "like" ? "liked" : "commented on";
           const time = dayjs(not.createdAt).fromNow();
           const iconColor = not.read ? "primary" : "secondary";
@@ -81,7 +81,7 @@ class Notifications extends Component {
                 variant="body1"
                 to={`/users/${not.recipient}/scream/${not.screamId}`}
               >
-                {not.sender} {verb} your scream {time}
+                {not.sender} {verb} your post {time}
               </Typography>
             </MenuItem>
           );
@@ -117,11 +117,11 @@ class Notifications extends Component {
 
 Notifications.propTypes = {
   markNotificationsRead: PropTypes.func.isRequired,
-  notifications: PropTypes.array.isRequired
+  notifications: PropTypes.array.isRequired,
 };
 
-const mapStateToProps = state => ({
-  notifications: state.user.notifications
+const mapStateToProps = (state) => ({
+  notifications: state.user.notifications,
 });
 
 export default connect(mapStateToProps, { markNotificationsRead })(

@@ -24,12 +24,12 @@ import KeyboardReturn from "@material-ui/icons/KeyboardReturn";
 import { connect } from "react-redux";
 import { logoutUser, uploadImage } from "../../redux/actions/userActions";
 
-const styles = theme => ({
-  ...theme.spreadThis
+const styles = (theme) => ({
+  ...theme.spreadThis,
 });
 
 class Profile extends Component {
-  handleImageChange = event => {
+  handleImageChange = (event) => {
     const image = event.target.files[0];
     const formData = new FormData();
     formData.append("image", image, image.name);
@@ -50,8 +50,8 @@ class Profile extends Component {
       user: {
         credentials: { handle, createdAt, imageUrl, bio, website, location },
         loading,
-        authenticated
-      }
+        authenticated,
+      },
     } = this.props;
     let profileMarkup = !loading ? (
       authenticated ? (
@@ -116,7 +116,7 @@ class Profile extends Component {
       ) : (
         <Paper className={classes.paper}>
           <Typography variant="body2" align="center">
-            No profile found, please login again!
+            No profile found, please login !
           </Typography>
           <div className={classes.buttons}>
             <Button
@@ -146,8 +146,8 @@ class Profile extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  user: state.user
+const mapStateToProps = (state) => ({
+  user: state.user,
 });
 
 const mapActionsToProps = { logoutUser, uploadImage };
@@ -156,7 +156,7 @@ Profile.propTypes = {
   logoutUser: PropTypes.func.isRequired,
   uploadImage: PropTypes.func.isRequired,
   user: PropTypes.object.isRequired,
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
 };
 
 export default connect(

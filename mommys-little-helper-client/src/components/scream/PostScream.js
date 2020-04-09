@@ -9,40 +9,41 @@ import {
   DialogContent,
   DialogTitle,
   TextField,
-  CircularProgress
+  CircularProgress,
 } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
 import CloseIcon from "@material-ui/icons/Close";
+
 //Redux Stuff
 import { connect } from "react-redux";
 import { postScream, clearErrors } from "../../redux/actions/dataActions";
 
-const styles = theme => ({
+const styles = (theme) => ({
   ...theme.spreadThis,
   submitButton: {
     position: "relative",
     float: "right",
-    margin: 10
+    margin: 10,
   },
   progressSpinner: {
-    position: "absolute"
+    position: "absolute",
   },
   closeButton: {
     position: "absolute",
     left: "91%",
-    top: "6%"
-  }
+    top: "6%",
+  },
 });
 class PostScream extends Component {
   state = {
     open: false,
     body: "",
-    errors: {}
+    errors: {},
   };
   componentWillReceiveProps(nextProps) {
     if (nextProps.UI.errors) {
       this.setState({
-        errors: nextProps.UI.errors
+        errors: nextProps.UI.errors,
       });
     }
     if (!nextProps.UI.errors && !nextProps.UI.loading) {
@@ -57,10 +58,10 @@ class PostScream extends Component {
     this.props.clearErrors();
     this.setState({ open: false, errors: {} });
   };
-  handleChange = event => {
+  handleChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
   };
-  handleSubmit = event => {
+  handleSubmit = (event) => {
     event.preventDefault();
     this.props.postScream({ body: this.state.body });
   };
@@ -68,7 +69,7 @@ class PostScream extends Component {
     const { errors } = this.state;
     const {
       classes,
-      UI: { loading }
+      UI: { loading },
     } = this.props;
     return (
       <Fragment>
@@ -128,11 +129,11 @@ class PostScream extends Component {
 PostScream.propTypes = {
   postScream: PropTypes.func.isRequired,
   clearErrors: PropTypes.func.isRequired,
-  UI: PropTypes.object.isRequired
+  UI: PropTypes.object.isRequired,
 };
 
-const mapStateToProps = state => ({
-  UI: state.UI
+const mapStateToProps = (state) => ({
+  UI: state.UI,
 });
 
 export default connect(mapStateToProps, { postScream, clearErrors })(

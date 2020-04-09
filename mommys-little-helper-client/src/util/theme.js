@@ -1,52 +1,55 @@
 export default {
   palette: {
     primary: {
-      main: "#f8bbd0"
+      main: "#f8bbd0",
     },
     secondary: {
-      main: "#ff4081"
-    }
+      main: "#ff4081",
+    },
+    whiteText: {
+      main: "#cfd8dc",
+    },
   },
   spreadThis: {
     typography: {
-      useNextVariants: true
+      useNextVariants: true,
     },
     form: {
-      textAlign: "center"
+      textAlign: "center",
     },
     image: {
       margin: "20px auto 20px auto",
-      height: 60
+      height: 60,
     },
     pageTitle: {
-      margin: "10px auto 10px auto"
+      margin: "10px auto 10px auto",
     },
     textField: {
-      margin: "10px auto 10px auto"
+      margin: "10px auto 10px auto",
     },
     button: {
       margin: "20px auto 20px auto",
-      position: "relative"
+      position: "relative",
     },
     customError: {
       color: "red",
       fontSize: "0.8rem",
-      marginTop: 10
+      marginTop: 10,
     },
     progress: {
-      position: "absolute"
+      position: "absolute",
     },
     invisibleSeparator: {
       border: "none",
-      margin: 4
+      margin: 4,
     },
     visibleSeparator: {
       width: "100%",
       borderBottom: "1px solid rgba(0,0,0,0.1)",
-      marginBottom: 16
+      marginBottom: 16,
     },
     paper: {
-      padding: 20
+      padding: 20,
     },
     profile: {
       "& .image-wrapper": {
@@ -55,40 +58,40 @@ export default {
         "& button": {
           position: "absolute",
           top: "80%",
-          left: "70%"
-        }
+          left: "70%",
+        },
       },
       "& .profile-image": {
         width: 200,
         height: 200,
         objectFit: "cover",
         maxWidth: "100%",
-        borderRadius: "50%"
+        borderRadius: "50%",
       },
       "& .profile-details": {
         textAlign: "center",
         "& span, svg": {
-          verticalAlign: "middle"
+          verticalAlign: "middle",
         },
         "& a": {
-          color: "#f8bbd0"
-        }
+          color: "#f8bbd0",
+        },
       },
       "& hr": {
         border: "none",
-        margin: "0 0 10px 0"
+        margin: "0 0 10px 0",
       },
       "& svg.button": {
         "&:hover": {
-          cursor: "pointer"
-        }
-      }
+          cursor: "pointer",
+        },
+      },
     },
     buttons: {
       textAlign: "center",
       "& a": {
-        margin: "20px 10px"
-      }
-    }
-  }
+        margin: "20px 10px",
+      },
+    },
+  },
 };
