@@ -8,7 +8,7 @@ import MyButton from "../../util/MyButton";
 import DeleteScream from "./DeleteScream";
 import ScreamDialog from "./ScreamDialog";
 import LikeButton from "./LikeButton";
-import MediaQuery from "react-responsive";
+import { useMediaQuery } from "react-responsive";
 
 // MUI Stuff
 import Card from "@material-ui/core/Card";
@@ -67,9 +67,17 @@ class Scream extends Component {
       authenticated && userHandle === handle ? (
         <DeleteScream screamId={screamId} />
       ) : null;
+    const Desktop = ({ children }) => {
+      const isDesktop = useMediaQuery({ minWidth: 992 });
+      return isDesktop ? children : null;
+    };
+    const Mobile = ({ children }) => {
+      const isMobile = useMediaQuery({ maxWidth: 767 });
+      return isMobile ? children : null;
+    };
     return (
       <Fragment>
-        <MediaQuery maxDeviceWidth={1224}>
+        <Mobile>
           <Card className={classes.card}>
             <CardMedia
               image={userImage}
@@ -106,8 +114,8 @@ class Scream extends Component {
               />
             </CardContent>
           </Card>
-        </MediaQuery>
-        <MediaQuery minDeviceWidth={1224}>
+        </Mobile>
+        <Desktop>
           <Card className={classes.card}>
             <CardMedia
               image={userImage}
@@ -142,7 +150,7 @@ class Scream extends Component {
               />
             </CardContent>
           </Card>
-        </MediaQuery>
+        </Desktop>
       </Fragment>
     );
   }
