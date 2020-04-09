@@ -16,14 +16,14 @@ import { deleteScream } from "../../redux/actions/dataActions";
 const styles = {
   deleteButton: {
     position: "absolute",
-    left: "90%",
-    top: "10%"
-  }
+    left: "87%",
+    top: "10%",
+  },
 };
 
 class DeleteScream extends Component {
   state = {
-    open: false
+    open: false,
   };
   handleOpen = () => {
     this.setState({ open: true });
@@ -73,7 +73,7 @@ class DeleteScream extends Component {
 DeleteScream.propTypes = {
   deleteScream: PropTypes.func.isRequired,
   classes: PropTypes.object.isRequired,
-  screamId: PropTypes.string.isRequired
+  screamId: PropTypes.string.isRequired,
 };
 
 export default connect(null, { deleteScream })(

@@ -20,37 +20,37 @@ import ChatIcon from "@material-ui/icons/Chat";
 import { connect } from "react-redux";
 import { getScream, clearErrors } from "../../redux/actions/dataActions";
 
-const styles = theme => ({
+const styles = (theme) => ({
   ...theme.spreadThis,
   profileImage: {
-    width: 180,
-    height: 180,
+    width: 150,
+    height: 150,
     borderRadius: "50%",
-    objectFit: "cover"
+    objectFit: "cover",
   },
   dialogContent: {
-    padding: 20
+    padding: 20,
   },
   closeButton: {
     position: "absolute",
-    left: "90%"
+    left: "87%",
   },
   expandButton: {
     position: "absolute",
-    left: "90%"
+    left: "87%",
   },
   spinnerDiv: {
     textAlign: "center",
     marginTop: 50,
-    marginBottom: 50
-  }
+    marginBottom: 50,
+  },
 });
 
 class ScreamDialog extends Component {
   state = {
     open: false,
     oldPath: "",
-    newPath: ""
+    newPath: "",
   };
   componentDidMount() {
     if (this.props.openDialog) {
@@ -87,9 +87,9 @@ class ScreamDialog extends Component {
         commentCount,
         userImage,
         userHandle,
-        comments
+        comments,
       },
-      UI: { loading }
+      UI: { loading },
     } = this.props;
 
     const dialogMarkup = loading ? (
@@ -111,7 +111,7 @@ class ScreamDialog extends Component {
             @{userHandle}
           </Typography>
           <hr className={classes.invisibleSeparator} />
-          <Typography variant="body2" color="primary">
+          <Typography variant="body2" color="textSecondary">
             {dayjs(createdAt).format("h:mma, D MMMM YYYY")}
           </Typography>
           <hr className={classes.invisibleSeparator} />
@@ -123,6 +123,7 @@ class ScreamDialog extends Component {
           </MyButton>
           <span>{commentCount} comments</span>
         </Grid>
+        <hr className={classes.visibleSeparator} />
         <CommentForm screamId={screamId} />
         <Comments comments={comments} />
       </Grid>
@@ -165,17 +166,17 @@ ScreamDialog.propTypes = {
   screamId: PropTypes.string.isRequired,
   userHandle: PropTypes.string.isRequired,
   scream: PropTypes.object.isRequired,
-  UI: PropTypes.object.isRequired
+  UI: PropTypes.object.isRequired,
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   scream: state.data.scream,
-  UI: state.UI
+  UI: state.UI,
 });
 
 const mapActionsToProps = {
   getScream,
-  clearErrors
+  clearErrors,
 };
 
 export default connect(

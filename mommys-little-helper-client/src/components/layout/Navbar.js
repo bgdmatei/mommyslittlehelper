@@ -38,7 +38,7 @@ class Navbar extends Component {
                 Login
               </Button>
               <Button style={{ color: "#fafafa" }} component={Link} to="signup">
-                Signup
+                Sign up
               </Button>
             </Fragment>
           )}
