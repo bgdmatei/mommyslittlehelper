@@ -6,6 +6,7 @@ import dayjs from "dayjs";
 import EditDetails from "./EditDetails";
 import MyButton from "../../util/MyButton";
 import ProfileSkeleton from "../../util/ProfileSkeleton";
+import AppIcon from "../../images/description.png";
 
 //MUI Stuff
 import Button from "@material-ui/core/Button";
@@ -114,29 +115,60 @@ class Profile extends Component {
           </div>
         </Paper>
       ) : (
-        <Paper className={classes.paper}>
-          <Typography variant="body2" align="center">
-            No profile found, please login
-          </Typography>
-          <div className={classes.buttons}>
-            <Button
-              variant="contained"
-              color="secondary"
-              component={Link}
-              to="/login"
+        <Fragment>
+          <div className={classes.description}>
+            <div
+              style={{
+                fontSize: "26px",
+                color: "#ff4081",
+                padding: "10px",
+                textShadow: "0px 1px 1px rgb(132,130,131)",
+              }}
             >
-              Login
-            </Button>
-            <Button
-              variant="contained"
-              color="secondary"
-              component={Link}
-              to="/signup"
+              Mommy's Little Helper
+            </div>
+            <img src={AppIcon} alt="" />
+            <div
+              style={{
+                color: "rgb(132, 130, 131)",
+                fontSize: "16px",
+                padding: "20px",
+              }}
             >
-              Sign up
-            </Button>
+              Are you a new parent in search of new food recipes or tips on
+              raising your child?
+              <br style={{ marginBottom: "10px" }} />
+              <strong style={{ color: "#f8bbd0" }}>
+                Mommy's Little Helper
+              </strong>{" "}
+              lets you get in contact with other parents that are happy to share
+              their experience.
+            </div>
           </div>
-        </Paper>
+          <Paper className={classes.paper}>
+            <Typography variant="body2" align="center">
+              No profile found, please login
+            </Typography>
+            <div className={classes.buttons}>
+              <Button
+                variant="contained"
+                color="secondary"
+                component={Link}
+                to="/login"
+              >
+                Login
+              </Button>
+              <Button
+                variant="contained"
+                color="secondary"
+                component={Link}
+                to="/signup"
+              >
+                Sign up
+              </Button>
+            </div>
+          </Paper>
+        </Fragment>
       )
     ) : (
       <ProfileSkeleton />

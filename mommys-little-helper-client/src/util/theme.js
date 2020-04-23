@@ -48,6 +48,14 @@ export default {
       borderBottom: "1px solid rgba(0,0,0,0.1)",
       marginBottom: 16,
     },
+    description: {
+      border: "1px solid rgba(0,0,0,0.1)",
+      marginBottom: 20,
+      textAlign: "center",
+      backgroundColor: "#fff",
+      boxShadow:
+        "0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12)",
+    },
     paper: {
       padding: 20,
     },
