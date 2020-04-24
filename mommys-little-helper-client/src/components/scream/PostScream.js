@@ -93,6 +93,7 @@ class PostScream extends Component {
           <DialogContent>
             <form onSubmit={this.handleSubmit}>
               <TextField
+                multiline
                 name="body"
                 type="text"
                 rows="3"
