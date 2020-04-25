@@ -136,7 +136,11 @@ class Scream extends Component {
               <Typography color="textSecondary" variant="body2">
                 {dayjs(createdAt).fromNow()}
               </Typography>
-              <Typography variant="body1">{body}</Typography>
+              <Typography variant="body1">
+                {body.split("\n").map((i, key) => {
+                  return <div key={key}>{i}</div>;
+                })}
+              </Typography>
               <LikeButton screamId={screamId} />
               <span>{likeCount} likes</span>
               <MyButton tip="Comments">
