@@ -73,6 +73,18 @@ class signup extends Component {
           </Typography>
           <form noValidate onSubmit={this.handleSubmit}>
             <TextField
+              id="handle"
+              name="handle"
+              type="text"
+              label="Name"
+              className={classes.textField}
+              helperText={errors.handle}
+              error={errors.handle ? true : false}
+              value={this.state.handle}
+              onChange={this.handleChange}
+              fullWidth
+            />
+            <TextField
               id="email"
               name="email"
               type="email"
@@ -105,18 +117,6 @@ class signup extends Component {
               helperText={errors.confirmPassword}
               error={errors.confirmPassword ? true : false}
               value={this.state.confirmPassword}
-              onChange={this.handleChange}
-              fullWidth
-            />
-            <TextField
-              id="handle"
-              name="handle"
-              type="text"
-              label="Name"
-              className={classes.textField}
-              helperText={errors.handle}
-              error={errors.handle ? true : false}
-              value={this.state.handle}
               onChange={this.handleChange}
               fullWidth
             />
