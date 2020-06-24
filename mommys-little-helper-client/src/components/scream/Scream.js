@@ -95,10 +95,16 @@ class Scream extends Component {
                 {userHandle}
               </Typography>
               {deleteButton}
-              <Typography color="textSecondary" variant="body2">
+              <Typography
+                color="textSecondary"
+                variant="body2"
+                style={{ marginBottom: "8px" }}
+              >
                 {dayjs(createdAt).fromNow()}
               </Typography>
+
               <Typography variant="body1">{body}</Typography>
+
               <LikeButton screamId={screamId} />
               <span>{likeCount} likes</span>
               <br />
@@ -136,6 +142,7 @@ class Scream extends Component {
               <Typography color="textSecondary" variant="body2">
                 {dayjs(createdAt).fromNow()}
               </Typography>
+              <br />
               <Typography variant="body1">
                 {body.split("\n").map((i, key) => {
                   return <div key={key}>{i}</div>;
