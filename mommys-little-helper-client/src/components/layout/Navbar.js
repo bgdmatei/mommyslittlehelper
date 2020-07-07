@@ -18,8 +18,8 @@ class Navbar extends Component {
     const { authenticated } = this.props;
     return (
       <AppBar>
-        <Toolbar className="nav-container">
           {authenticated ? (
+        <Toolbar className="nav-container">
             <Fragment>
               <PostScream />
               <Link to="/">
@@ -29,11 +29,10 @@ class Navbar extends Component {
                 <Notifications />
               </Link>
             </Fragment>
+              </Toolbar>
           ) : (
+            <Toolbar className="nav-landing">
             <Fragment>
-              <Button style={{ color: "#fafafa" }} component={Link} to="/">
-                Home
-              </Button>
               <Button style={{ color: "#fafafa" }} component={Link} to="/login">
                 Login
               </Button>
@@ -41,8 +40,8 @@ class Navbar extends Component {
                 Sign up
               </Button>
             </Fragment>
+            </Toolbar>
           )}
-        </Toolbar>
       </AppBar>
     );
   }
