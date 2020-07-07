@@ -35,8 +35,8 @@ class home extends Component {
       </Grid>
       ) : (
         <Landing />
-      )}
-      </div>
+        )}
+        </div>
     );
   }
 }

@@ -37,8 +37,24 @@ a {
 
 .hero-banner {
   height: 70vh;
-  border: 1px solid grey;
+  border: 1px solid #d4d0d0b0;
   border-radius: 32px;
   padding: 32px;
-  margin-top: 32px;
+  margin-top: 136px;
+  box-shadow: -5px 10px lightgrey;
+  display: grid;
+}
+
+.hero-title {
+  text-align: center;
+  align-self: center;
+}
+
+.hero-title h1 {
+  font-size: 50px;
+}
+
+.hero-button {
+  text-align: center;
+  align-self: center;
 }
