@@ -17,21 +17,24 @@ class Navbar extends Component {
   render() {
     const { authenticated } = this.props;
     return (
-      <AppBar>
-          {authenticated ? (
-        <Toolbar className="nav-container">
-            <Fragment>
-              <PostScream />
-              <Link to="/">
-                <MyButton tip="Home">
-                  <HomeIcon />
-                </MyButton>
-                <Notifications />
-              </Link>
-            </Fragment>
-              </Toolbar>
+      <div>
+        {authenticated ? (
+          <AppBar>
+            <Toolbar className="nav-container">
+              <Fragment>
+                <PostScream />
+                <Link to="/">
+                  <MyButton tip="Home">
+                    <HomeIcon />
+                  </MyButton>
+                  <Notifications />
+                </Link>
+              </Fragment>
+            </Toolbar>
+          </AppBar>
           ) : (
-            <Toolbar className="nav-landing">
+            <AppBar style={{backgroundColor: 'transparent'}}>            
+              <Toolbar className="nav-landing" >
             <Fragment>
               <Button style={{ color: "#fafafa" }} component={Link} to="/login">
                 Login
@@ -41,8 +44,9 @@ class Navbar extends Component {
               </Button>
             </Fragment>
             </Toolbar>
+            </AppBar>
           )}
-      </AppBar>
+      </div>
     );
   }
 }
