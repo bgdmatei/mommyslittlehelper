@@ -24,7 +24,7 @@ class home extends Component {
     );
     return (
       <div>
-      {authenticated ? (
+       {authenticated ? (
       <Grid container spacing={5}>
         <Grid item sm={8} xs={12}>
           {recentScreamsMarkup}
@@ -33,9 +33,9 @@ class home extends Component {
           <Profile />
         </Grid>
       </Grid>
-      ) : (
+       ) : (
         <Landing />
-        )}
+      )}
         </div>
     );
   }
