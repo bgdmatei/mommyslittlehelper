@@ -15,8 +15,8 @@ class home extends Component {
     this.props.getScreams();
   }
   render() {
-    const { screams, loading } = this.props.data;
     const { authenticated } = this.props
+    const { screams, loading } = this.props.data;
     let recentScreamsMarkup = !loading ? (
       screams.map(scream => <Scream key={scream.screamId} scream={scream} />)
     ) : (
@@ -43,11 +43,13 @@ class home extends Component {
 
 home.propTypes = {
   getScreams: PropTypes.func.isRequired,
-  data: PropTypes.object.isRequired
+  data: PropTypes.object.isRequired,
+  authenticated: PropTypes.bool.isRequired
 };
 
 const mapStateToProps = state => ({
-  data: state.data
+  data: state.data,
+  authenticated: state.user.authenticated,
 });
 
 export default connect(mapStateToProps, { getScreams })(home);

@@ -36,10 +36,10 @@ class Navbar extends Component {
             <AppBar style={{backgroundColor: 'transparent'}}>            
               <Toolbar className="nav-landing" >
             <Fragment>
-              <Button style={{ color: "#fafafa" }} component={Link} to="/login">
+              <Button style={{ color: "#f8bbd0" }} component={Link} to="/login">
                 Login
               </Button>
-              <Button style={{ color: "#fafafa" }} component={Link} to="signup">
+              <Button style={{ color: "#f8bbd0" }} component={Link} to="signup">
                 Sign up
               </Button>
             </Fragment>

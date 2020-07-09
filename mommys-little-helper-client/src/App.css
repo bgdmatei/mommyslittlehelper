@@ -17,10 +17,8 @@ body {
 
 .nav-landing {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
-
-
 
 .nav-title {
   color: #fff;
@@ -51,6 +49,7 @@ a {
 .hero-title {
   text-align: center;
   align-self: center;
+  color: #f8bbd0;
 }
 
 .hero-title h1 {
