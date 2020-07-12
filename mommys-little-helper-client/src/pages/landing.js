@@ -9,7 +9,8 @@ class landing extends Component {
                 <div className="hero-banner" >
                     <div className="hero-title">
                         <h1>Mommy's Little Helper</h1>
-                        <p>Hello from landing</p>
+                        <p>Are you a new parent in search of new food recipes or tips on raising your child?
+Mommy's Little Helper lets you get in contact with other parents that are happy to share their experience.</p>
                     </div>
                     <div className="hero-button">
                         <Button className="hero-button-register" component={Link} to="signup">
@@ -17,9 +18,7 @@ class landing extends Component {
                         </Button>
                     </div>
                 </div>
-                <div>
-                    <h1>Hi</h1>
-                </div>
+                
             </div>
         )
     }
