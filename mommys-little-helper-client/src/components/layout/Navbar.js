@@ -17,33 +17,36 @@ class Navbar extends Component {
   render() {
     const { authenticated } = this.props;
     return (
-      <AppBar>
-        <Toolbar className="nav-container">
-          {authenticated ? (
-            <Fragment>
-              <PostScream />
-              <Link to="/">
-                <MyButton tip="Home">
-                  <HomeIcon />
-                </MyButton>
-                <Notifications />
-              </Link>
-            </Fragment>
+      <div>
+        {authenticated ? (
+          <AppBar>
+            <Toolbar className="nav-container">
+              <Fragment>
+                <PostScream />
+                <Link to="/">
+                  <MyButton tip="Home">
+                    <HomeIcon />
+                  </MyButton>
+                  <Notifications />
+                </Link>
+              </Fragment>
+            </Toolbar>
+          </AppBar>
           ) : (
+            <AppBar style={{backgroundColor: 'rgba(248, 187, 208, 0.48)'}}>            
+              <Toolbar className="nav-landing" >
             <Fragment>
-              <Button style={{ color: "#fafafa" }} component={Link} to="/">
-                Home
-              </Button>
-              <Button style={{ color: "#fafafa" }} component={Link} to="/login">
+              <Button style={{ color: "#fff" }} component={Link} to="/login">
                 Login
               </Button>
-              <Button style={{ color: "#fafafa" }} component={Link} to="signup">
+              <Button style={{ color: "#fff" }} component={Link} to="signup">
                 Sign up
               </Button>
             </Fragment>
+            </Toolbar>
+            </AppBar>
           )}
-        </Toolbar>
-      </AppBar>
+      </div>
     );
   }
 }
