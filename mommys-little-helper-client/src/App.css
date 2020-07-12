@@ -42,7 +42,7 @@ a {
   border-radius: 32px;
   padding: 32px;
   margin-top: 136px;
-  box-shadow: -5px 10px lightgrey;
+  box-shadow: -5px 10px #eabcbc73;
   display: grid;
 }
 
@@ -59,4 +59,16 @@ a {
 .hero-button {
   text-align: center;
   align-self: center;
+  
+}
+
+.hero-button a {
+background-color: #f8bbd0;
+border: 1px solid #fff;
+color: #fff;
+}
+
+.hero-button a:hover {
+  background-color: #f8bbd0e3;
+  color: #fff;
 }

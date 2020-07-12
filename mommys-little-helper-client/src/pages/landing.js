@@ -5,15 +5,20 @@ import Button from "@material-ui/core/Button";
 class landing extends Component {
     render() {
         return (
-            <div className="hero-banner" >
-                <div className="hero-title">
-                    <h1>Mommy's Little Helper</h1>
-                    <p>Hello from landing</p>
+            <div>
+                <div className="hero-banner" >
+                    <div className="hero-title">
+                        <h1>Mommy's Little Helper</h1>
+                        <p>Hello from landing</p>
+                    </div>
+                    <div className="hero-button">
+                        <Button className="hero-button-register" component={Link} to="signup">
+                            Register
+                        </Button>
+                    </div>
                 </div>
-                <div className="hero-button">
-                    <Button style={{ border: "1px solid grey" }} component={Link} to="signup">
-                        Register
-                    </Button>
+                <div>
+                    <h1>Hi</h1>
                 </div>
             </div>
         )
