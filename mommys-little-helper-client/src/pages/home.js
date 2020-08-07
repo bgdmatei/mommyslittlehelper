@@ -5,7 +5,8 @@ import PropTypes from "prop-types";
 import Scream from "../components/scream/Scream";
 import Profile from "../components/profile/Profile";
 import ScreamSkeleton from "../util/ScreamSkeleton";
-import Landing from './landing'
+import Landing from "./landing";
+import "../App.css";
 
 import { connect } from "react-redux";
 import { getScreams } from "../redux/actions/dataActions";
@@ -15,28 +16,30 @@ class home extends Component {
     this.props.getScreams();
   }
   render() {
-    const { authenticated } = this.props
+    const { authenticated } = this.props;
     const { screams, loading } = this.props.data;
     let recentScreamsMarkup = !loading ? (
-      screams.map(scream => <Scream key={scream.screamId} scream={scream} />)
+      screams.map((scream) => <Scream key={scream.screamId} scream={scream} />)
     ) : (
       <ScreamSkeleton />
     );
     return (
       <div>
-       {authenticated ? (
-      <Grid container spacing={5}>
-        <Grid item sm={8} xs={12}>
-          {recentScreamsMarkup}
-        </Grid>
-        <Grid item sm={4} xs={12}>
-          <Profile />
-        </Grid>
-      </Grid>
-       ) : (
-        <Landing />
-      )}
-        </div>
+        {authenticated ? (
+          <div className="container">
+            <Grid container spacing={5}>
+              <Grid item sm={8} xs={12}>
+                {recentScreamsMarkup}
+              </Grid>
+              <Grid item sm={4} xs={12}>
+                <Profile />
+              </Grid>
+            </Grid>
+          </div>
+        ) : (
+          <Landing />
+        )}
+      </div>
     );
   }
 }
@@ -44,10 +47,10 @@ class home extends Component {
 home.propTypes = {
   getScreams: PropTypes.func.isRequired,
   data: PropTypes.object.isRequired,
-  authenticated: PropTypes.bool.isRequired
+  authenticated: PropTypes.bool.isRequired,
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   data: state.data,
   authenticated: state.user.authenticated,
 });

@@ -11,10 +11,10 @@ body {
   padding: 0;
 }
 
-/* .container {
+.container {
   margin: 80px auto 0 auto;
   max-width: 1200px;
-} */
+}
 
 .nav-container {
   margin: auto;
@@ -24,6 +24,7 @@ body {
   position: relative;
   display: flex;
   justify-content: center;
+  background: #dfdfdf;
 }
 
 .nav-title {
@@ -35,11 +36,30 @@ body {
 }
 
 .hero-landing {
+  background: #dfdfdf;
   max-width: 100%;
-  height: 90vh;
+  height: 93vh;
   overflow: hidden;
   display: grid;
   grid-template-columns: 5% 1fr 1fr 5%;
+}
+
+.hero-title {
+  font-family: "Playfair Display", serif;
+}
+
+.hero-title h1 {
+  font-size: 64px;
+  color: #5f5d7e;
+}
+
+.hero-title p {
+  color: #5f5d7e;
+  font-size: 36px;
+  text-align: left;
+  max-width: 70%;
+  opacity: 0.6;
+  padding: 50px 0px;
 }
 
 .hero-logo {
@@ -49,8 +69,8 @@ body {
 
 .mother-logo {
   position: absolute;
-  top: -50%;
-  right: 10%;
+  top: 25%;
+  right: 5%;
   z-index: 2;
 }
 
@@ -68,15 +88,18 @@ body {
   justify-self: center;
 }
 
-a {
-  text-decoration: none;
+.hero-title .button {
+  color: white;
+  background: linear-gradient(45deg, #7a74de, #f5c5cc);
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
 }
 
-.card-landing {
-  position: relative;
-  height: 240px;
-  width: 240px;
-  margin: 8px;
-  text-align: center;
-  border-radius: 4px;
+.hero-title .button:hover {
+  background: linear-gradient(195deg, #7a74de, #f5c5cc);
+}
+
+a {
+  text-decoration: none;
 }

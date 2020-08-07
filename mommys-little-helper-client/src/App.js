@@ -23,7 +23,6 @@ import signup from "./pages/signup";
 import user from "./pages/user";
 import axios from "axios";
 
-
 const theme = createMuiTheme(themeFile);
 
 axios.defaults.baseURL =
@@ -49,7 +48,7 @@ class App extends Component {
         <Provider store={store}>
           <Router>
             <Navbar />
-            <div className="container">
+            <div>
               <Switch>
                 <Route exact path="/" component={home} />
                 <AuthRoute exact path="/login" component={login} />
