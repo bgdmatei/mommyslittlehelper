@@ -37,8 +37,28 @@ body {
 .hero-landing {
   max-width: 100%;
   height: 90vh;
+  overflow: hidden;
   display: grid;
   grid-template-columns: 5% 1fr 1fr 5%;
+}
+
+.hero-logo {
+  grid-column: 3/4;
+  position: relative;
+}
+
+.mother-logo {
+  position: absolute;
+  top: -50%;
+  right: 10%;
+  z-index: 2;
+}
+
+.rectangle-logo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
 }
 
 .hero-title {

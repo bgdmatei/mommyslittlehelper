@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
-import { Container } from "@material-ui/core";
+import Rectangle from "../images/rectangle-rounded.svg";
+import Mother from "../images/mother-baby.svg";
 
 class landing extends Component {
   render() {
@@ -20,6 +21,14 @@ class landing extends Component {
             Register
           </Button>
         </div>
+        <div className="hero-logo">
+          <img className="mother-logo" src={Mother} alt="mother and child" />
+        </div>
+        <img
+          className="rectangle-logo"
+          src={Rectangle}
+          alt="rectangle background"
+        />
       </div>
     );
   }
