@@ -1,27 +1,28 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
+import { Container } from "@material-ui/core";
 
 class landing extends Component {
-    render() {
-        return (
-            <div>
-                <div className="hero-banner" >
-                    <div className="hero-title">
-                        <h1>Mommy's Little Helper</h1>
-                        <p>Are you a new parent in search of new food recipes or tips on raising your child?
-Mommy's Little Helper lets you get in contact with other parents that are happy to share their experience.</p>
-                    </div>
-                    <div className="hero-button">
-                        <Button className="hero-button-register" component={Link} to="signup">
-                            Register
-                        </Button>
-                    </div>
-                </div>
-                
-            </div>
-        )
-    }
+  render() {
+    return (
+      <div className="hero-landing">
+        <div className="hero-title">
+          <h1>Mommy's Little Helper</h1>
+          <p>
+            Are you a new parent in search of new food recipes or tips on
+            raising your child? Mommy's Little Helper lets you get in contact
+            with other parents that are happy to share their experience.
+          </p>
+        </div>
+        <div className="hero-button">
+          <Button className="hero-button-register" component={Link} to="signup">
+            Register
+          </Button>
+        </div>
+      </div>
+    );
+  }
 }
 
-export default landing
+export default landing;
