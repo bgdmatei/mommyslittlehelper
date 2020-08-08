@@ -27,6 +27,13 @@ body {
   background: #dfdfdf;
 }
 
+nav {
+  min-height: 10vh;
+  display: flex;
+  justify-content: center;
+  background: #dfdfdf;
+}
+
 .nav-title {
   color: #fff;
 }
@@ -102,4 +109,10 @@ body {
 
 a {
   text-decoration: none;
+}
+
+@media only screen and (max-width: 767px) {
+  .hero-title {
+    z-index: 5;
+  }
 }

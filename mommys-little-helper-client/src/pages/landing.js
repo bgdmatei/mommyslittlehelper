@@ -7,23 +7,33 @@ import Mother from "../images/mother-baby.svg";
 class landing extends Component {
   render() {
     return (
-      <div className="hero-landing">
-        <div className="hero-title">
-          <h1>Mommy's Little Helper</h1>
-          <p>Your new personal parenting coach</p>
-          <Button className="button" component={Link} to="signup">
-            Register
+      <div>
+        <nav>
+          <Button style={{ color: "#7A74DE" }} component={Link} to="/login">
+            Login
           </Button>
-        </div>
+          <Button style={{ color: "#7A74DE" }} component={Link} to="signup">
+            Sign up
+          </Button>
+        </nav>
+        <div className="hero-landing">
+          <div className="hero-title">
+            <h1>Mommy's Little Helper</h1>
+            <p>Your new personal parenting coach</p>
+            <Button className="button" component={Link} to="signup">
+              Register
+            </Button>
+          </div>
 
-        <div className="hero-logo">
-          <img className="mother-logo" src={Mother} alt="mother and child" />
+          <div className="hero-logo">
+            <img className="mother-logo" src={Mother} alt="mother and child" />
+          </div>
+          <img
+            className="rectangle-logo"
+            src={Rectangle}
+            alt="rectangle background"
+          />
         </div>
-        <img
-          className="rectangle-logo"
-          src={Rectangle}
-          alt="rectangle background"
-        />
       </div>
     );
   }

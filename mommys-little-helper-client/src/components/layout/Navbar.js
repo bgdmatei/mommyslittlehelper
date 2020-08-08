@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import MyButton from "../../util/MyButton";
 import PostScream from "../scream/PostScream";
 import Notifications from "./Notifications";
+import "../../App.css";
 // MUI
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -34,24 +35,7 @@ class Navbar extends Component {
           </AppBar>
         ) : (
           <div>
-            <Toolbar className="nav-landing">
-              <Fragment>
-                <Button
-                  style={{ color: "#7A74DE" }}
-                  component={Link}
-                  to="/login"
-                >
-                  Login
-                </Button>
-                <Button
-                  style={{ color: "#7A74DE" }}
-                  component={Link}
-                  to="signup"
-                >
-                  Sign up
-                </Button>
-              </Fragment>
-            </Toolbar>
+            <Fragment></Fragment>
           </div>
         )}
       </div>

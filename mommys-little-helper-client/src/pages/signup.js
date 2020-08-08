@@ -141,6 +141,14 @@ class signup extends Component {
                 />
               )}
             </Button>
+            <Button
+              style={{ marginLeft: "8px" }}
+              variant="contained"
+              color="primary"
+              className={classes.button}
+            >
+              <Link to="/login">Login</Link>
+            </Button>
             <br />
             <small>
               Already have an account? Login <Link to="/login">here</Link>
