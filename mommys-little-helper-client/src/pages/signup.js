@@ -1,19 +1,19 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import withStyles from "@material-ui/core/styles/withStyles";
-import PropTypes from "prop-types";
-import AppIcon from "../images/signup.png";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import withStyles from '@material-ui/core/styles/withStyles';
+import PropTypes from 'prop-types';
+import AppIcon from '../images/signup.png';
 
 //MUI Stuff
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
-import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
-import CircularProgress from "@material-ui/core/CircularProgress";
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 //Redux stuff
-import { connect } from "react-redux";
-import { signupUser } from "../redux/actions/userActions";
+import { connect } from 'react-redux';
+import { signupUser } from '../redux/actions/userActions';
 
 const styles = (theme) => ({
   ...theme.spreadThis,
@@ -23,10 +23,10 @@ class signup extends Component {
   constructor() {
     super();
     this.state = {
-      email: "",
-      password: "",
-      confirmPassword: "",
-      handle: "",
+      email: '',
+      password: '',
+      confirmPassword: '',
+      handle: '',
       errors: {},
     };
   }
@@ -67,16 +67,16 @@ class signup extends Component {
       <Grid container className={classes.form}>
         <Grid item sm />
         <Grid item sm>
-          <img src={AppIcon} alt="pacifier" className={classes.image} />
-          <Typography variant="h3" className={classes.pageTitle}>
+          <img src={AppIcon} alt='pacifier' className={classes.image} />
+          <Typography variant='h3' className={classes.pageTitle}>
             Signup
           </Typography>
           <form noValidate onSubmit={this.handleSubmit}>
             <TextField
-              id="handle"
-              name="handle"
-              type="text"
-              label="Name"
+              id='handle'
+              name='handle'
+              type='text'
+              label='Name'
               className={classes.textField}
               helperText={errors.handle}
               error={errors.handle ? true : false}
@@ -85,10 +85,10 @@ class signup extends Component {
               fullWidth
             />
             <TextField
-              id="email"
-              name="email"
-              type="email"
-              label="Email"
+              id='email'
+              name='email'
+              type='email'
+              label='Email'
               className={classes.textField}
               helperText={errors.email}
               error={errors.email ? true : false}
@@ -97,10 +97,10 @@ class signup extends Component {
               fullWidth
             />
             <TextField
-              id="password"
-              name="password"
-              type="password"
-              label="Password"
+              id='password'
+              name='password'
+              type='password'
+              label='Password'
               className={classes.textField}
               helperText={errors.password}
               error={errors.password ? true : false}
@@ -109,10 +109,10 @@ class signup extends Component {
               fullWidth
             />
             <TextField
-              id="confirmPassword"
-              name="confirmPassword"
-              type="password"
-              label="Confirm Password"
+              id='confirmPassword'
+              name='confirmPassword'
+              type='password'
+              label='Confirm Password'
               className={classes.textField}
               helperText={errors.confirmPassword}
               error={errors.confirmPassword ? true : false}
@@ -121,14 +121,14 @@ class signup extends Component {
               fullWidth
             />
             {errors.general && (
-              <Typography variant="body1" className={classes.customError}>
+              <Typography variant='body1' className={classes.customError}>
                 {errors.general}
               </Typography>
             )}
             <Button
-              type="submit"
-              variant="contained"
-              color="primary"
+              type='submit'
+              variant='contained'
+              color='primary'
               className={classes.button}
               disabled={loading}
             >
@@ -136,22 +136,15 @@ class signup extends Component {
               {loading && (
                 <CircularProgress
                   size={20}
-                  color="secondary"
+                  color='secondary'
                   className={classes.progress}
                 />
               )}
             </Button>
-            <Button
-              style={{ marginLeft: "8px" }}
-              variant="contained"
-              color="primary"
-              className={classes.button}
-            >
-              <Link to="/login">Login</Link>
-            </Button>
+
             <br />
             <small>
-              Already have an account? Login <Link to="/login">here</Link>
+              Already have an account? Login <Link to='/login'>here</Link>
             </small>
           </form>
         </Grid>

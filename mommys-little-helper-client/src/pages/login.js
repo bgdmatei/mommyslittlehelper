@@ -1,19 +1,19 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import withStyles from "@material-ui/core/styles/withStyles";
-import PropTypes from "prop-types";
-import AppIcon from "../images/icon.png";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import withStyles from '@material-ui/core/styles/withStyles';
+import PropTypes from 'prop-types';
+import AppIcon from '../images/icon.png';
 
 //MUI Stuff
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
-import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
-import CircularProgress from "@material-ui/core/CircularProgress";
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 //Redux stuff
-import { connect } from "react-redux";
-import { loginUser } from "../redux/actions/userActions";
+import { connect } from 'react-redux';
+import { loginUser } from '../redux/actions/userActions';
 
 const styles = (theme) => ({
   ...theme.spreadThis,
@@ -23,8 +23,8 @@ class login extends Component {
   constructor() {
     super();
     this.state = {
-      email: "",
-      password: "",
+      email: '',
+      password: '',
       errors: {},
     };
   }
@@ -60,16 +60,16 @@ class login extends Component {
       <Grid container className={classes.form}>
         <Grid item sm />
         <Grid item sm>
-          <img src={AppIcon} alt="pacifier" className={classes.image} />
-          <Typography variant="h3" className={classes.pageTitle}>
+          <img src={AppIcon} alt='pacifier' className={classes.image} />
+          <Typography variant='h3' className={classes.pageTitle}>
             Login
           </Typography>
           <form noValidate onSubmit={this.handleSubmit}>
             <TextField
-              id="email"
-              name="email"
-              type="email"
-              label="Email"
+              id='email'
+              name='email'
+              type='email'
+              label='Email'
               className={classes.textField}
               helperText={errors.email}
               error={errors.email ? true : false}
@@ -78,10 +78,10 @@ class login extends Component {
               fullWidth
             />
             <TextField
-              id="password"
-              name="password"
-              type="password"
-              label="Password"
+              id='password'
+              name='password'
+              type='password'
+              label='Password'
               className={classes.textField}
               helperText={errors.password}
               error={errors.password ? true : false}
@@ -90,14 +90,14 @@ class login extends Component {
               fullWidth
             />
             {errors.general && (
-              <Typography variant="body1" className={classes.customError}>
+              <Typography variant='body1' className={classes.customError}>
                 {errors.general}
               </Typography>
             )}
             <Button
-              type="submit"
-              variant="contained"
-              color="primary"
+              type='submit'
+              variant='contained'
+              color='primary'
               className={classes.button}
               disabled={loading}
             >
@@ -105,22 +105,15 @@ class login extends Component {
               {loading && (
                 <CircularProgress
                   size={20}
-                  color="secondary"
+                  color='secondary'
                   className={classes.progress}
                 />
               )}
             </Button>
-            <Button
-              style={{ marginLeft: "8px" }}
-              variant="contained"
-              color="primary"
-              className={classes.button}
-            >
-              <Link to="/login">Sign Up</Link>
-            </Button>
+
             <br />
             <small>
-              Don't have an account? Sign up <Link to="/signup">here</Link>
+              Don't have an account? Sign up <Link to='/signup'>here</Link>
             </small>
           </form>
         </Grid>
