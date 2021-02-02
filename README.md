@@ -16,3 +16,8 @@ Set up
 Compiles and minifies for production
 
 `yarn build`
+
+Sample User Logins
+
+john@example.com (Customer)
+123456
