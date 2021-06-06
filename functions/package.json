@@ -20,7 +20,7 @@
     "lodash": "4.17.19"
   },
   "devDependencies": {
-    "firebase-functions-test": "0.1.7"
+    "firebase-functions-test": "0.3.0"
   },
   "private": true
 }
